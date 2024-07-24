@@ -1,3 +1,8 @@
+function updateYearsOutput() {
+    const years = document.getElementById('years').value;
+    document.getElementById('years-output').innerText = years;
+}
+
 function calculateProfit() {
     const initialValue = parseFloat(document.getElementById('initial-value').value);
     const cumValue = parseFloat(document.getElementById('cumulative').value);
