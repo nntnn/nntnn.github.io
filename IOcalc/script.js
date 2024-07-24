@@ -13,7 +13,7 @@ function updateYearsFromSlider() {
 function calculateProfit() {
     const initialValue = parseFloat(document.getElementById('initial-value').value);
     const cumValue = parseFloat(document.getElementById('cumulative').value);
-    const years = parseFloat(document.getElementById('years').value);
+    const years = parseFloat(document.getElementById('years-input').value);
     const returns = parseFloat(document.getElementById('returns').value);
     const retp = returns / 100 + 1;
 
