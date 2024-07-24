@@ -1,6 +1,13 @@
-function updateYearsOutput() {
-    const years = document.getElementById('years').value;
-    document.getElementById('years-output').innerText = years;
+function updateYearsFromInput() {
+    const yearsInput = document.getElementById('years-input');
+    const yearsSlider = document.getElementById('years-slider');
+    yearsSlider.value = yearsInput.value;
+}
+
+function updateYearsFromSlider() {
+    const yearsInput = document.getElementById('years-input');
+    const yearsSlider = document.getElementById('years-slider');
+    yearsInput.value = yearsSlider.value;
 }
 
 function calculateProfit() {
