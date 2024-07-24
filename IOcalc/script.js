@@ -10,6 +10,6 @@ function calculateProfit() {
         return;
     }
 
-    const cumulativeProfit = initialValue * (retp) ^ years + (cumValue)*(1-retp^years)/(1-retp);
+    const cumulativeProfit = initialValue * (retp) ** years + (cumValue) * (1 - retp ** years) / (1 - retp);
     document.getElementById('result').innerText = `Cumulative Profit: $${cumulativeProfit.toFixed(2)}`;
 }
