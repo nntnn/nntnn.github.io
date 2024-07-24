@@ -18,8 +18,16 @@
         <label for="cumulative">연간 추가금액:</label>
         <input type="number" id="cumulative" placeholder="Enter cumulative volume">
         <br>
+<!-- 
         <label for="years">몇년간:</label>
         <input type="number" id="years" placeholder="Enter years to calculate">
+ -->
+        <div class="slider-label">
+            <label for="years">Years:</label>
+            <span id="years-output">1</span>
+        </div>
+        <input type="range" id="years" min="1" max="100" value="1" oninput="updateYearsOutput()">
+        
         <label for="returns">연간 수익률 (%):</label>
         <input type="number" id="returns" placeholder="Enter returns percentage">
         
