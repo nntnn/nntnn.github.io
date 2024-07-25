@@ -17,7 +17,9 @@ function calculateProfit() {
     const cumValue = parseFloat(document.getElementById('cumulative').value);
     const years = parseFloat(document.getElementById('years-input').value);
     const returns = parseFloat(document.getElementById('returns').value);
-    const retp = returns / 100 + 1;
+    const infla = parseFloat(document.getElementById('inflation_ratio').value);
+    const retp = (returns - infla) / 100 + 1;
+
 
     if (isNaN(initialValue) || isNaN(cumValue) || isNaN(years) || isNaN(returns)) {
         document.getElementById('result').innerText = 'Please enter valid numbers.';
