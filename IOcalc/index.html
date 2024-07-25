@@ -11,28 +11,32 @@
 <body>
     <div class="container">
         <h1>Cumulative principal with Compound interest Calculator</h1>
+        <hr>
+        <h2>Income</h2>
         <div class="input_box">
-            <label for="initial-value" align="right">Initial balance, </label>
+            <label for="initial-value">Initial balance, </label>
             <p id="formula">$$a$$</p>
             <input type="number" id="initial-value" value="50000" placeholder="Enter initial value">
         </div>
         <div class="input_box">
-            <label for="cumulative" align="right">Cumulative balance, </label>
+            <label for="cumulative">Cumulative balance, </label>
             <p id="formula">$$d$$</p>
             <input type="number" id="cumulative" value="500" placeholder="Enter cumulative value">    
         </div>
         <div class="input_box_slider">
-            <label for="years" align="right">Duration, </label>
+            <label for="years">Duration, </label>
             <p id="formula">$$n$$</p>
             <input type="range" id="years-slider" min="1" max="360" value="120" oninput="updateYearsFromSlider()">
             <input type="number" id="years-input" width="20px" min="1" max="360" value="120" oninput="updateYearsFromInput()">
         </div>
         <div class="input_box">
-            <label for="returns" align="right">Profit Ratio (%), </label>
+            <label for="returns">Profit Ratio (%), </label>
             <p id="formula">$$r$$</p>
             <input type="number" id="returns", value="0.787" placeholder="Enter returns percentage">
         </div>
-
+        <hr>
+        <h2>Loss due to Inflation</h2>
+        <hr>
         <button onclick="calculateProfit()">Calculate</button>
         <h3>Formula:</h3>
         <p id="formula">$$\textrm{Final Volume} =aR^{n}+d\frac{(1-R^{n})}{1-R}$$</p>
