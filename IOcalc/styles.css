@@ -4,9 +4,6 @@ body {
     padding: 0;
     box-sizing: border-box;
 }
-label {
-    font-size: 1rem;
-}
 h1 {
     font-size: 1.5rem;
 }
@@ -15,9 +12,16 @@ h2 {
 }
 h3 {
     font-size: 1.125rem;
+}
+label {
+    font-size: 1rem;
+    display:block; 
+    text-align:left;
 }        
 p {
-    font-size: .75rem;
+    font-size: .9rem;
+    display:block; 
+    text-align:left;
 }      
 .container {
     max-width: 400px;
@@ -30,6 +34,7 @@ input, button {
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
+    box-
     text-overflow: ellipsis;
 }
 .input_box {
@@ -44,7 +49,7 @@ input, button {
     flex: 1;
 }        
 .input_box > input {
-    flex: 5;
+    flex: 6;
     margin-left: 10px;
 }
 
@@ -54,17 +59,16 @@ input, button {
     align-items: center;
 }
 .input_box_slider > label {
-    flex: 2;
+    flex: 0.3;
 }
 .input_box_slider > p {
-    flex: 1;
+    flex: 0.1;
 }        
 .input_box_slider > input {
-    flex: 5;
-    margin-left: 10px;
+    flex: .45;
 }
 .input_box_slider > input:last-child {
-    flex: 2;
+    flex: .15;
     margin-left: 10px;
 }
 canvas {
