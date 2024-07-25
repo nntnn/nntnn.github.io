@@ -5,113 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cumulative principal with Compound interest Calculator</title>
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        label {
-            font-size: 1rem;
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
 
-        }
-        h1 {
-            font-size: 2rem;
-        }
-        h2 {
-            font-size: 1.5rem;
-        }
-        h3 {
-            font-size: 1.2rem;
-        }        
-        p {
-            font-size: .75rem;
-        }      
-        .container {
-            max-width: 400px;
-            margin: 0 auto;
-            padding: 50px;
-            background-color: #F1F1F1;
-        }
-        input, button {
-            margin: 10px 0;
-            width: 100%;
-            padding: 10px;
-            box-sizing: border-box;
-        }
-        .input_box {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .input_box > label {
-            flex: 3;
-        }
-        .input_box > p {
-            flex: 1;
-        }        
-        .input_box > input {
-            flex: 5;
-            margin-left: 10px;
-        }
-
-        .input_box_slider {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .input_box_slider > label {
-            flex: 2;
-        }
-        .input_box_slider > p {
-            flex: 1;
-        }        
-        .input_box_slider > input {
-            flex: 5;
-            margin-left: 10px;
-        }
-        .input_box_slider > input:last-child {
-            flex: 2;
-            margin-left: 10px;
-        }
-        canvas {
-            margin-top: 20px;
-            width: 100%; /* Ensures the canvas width adjusts to the container */
-            height: 400px; /* Set the desired height */
-        }
-        @media (max-width: 600px;) {
-            .container {
-                padding: 10px;
-            }
-            input, button {
-                padding: 8px;
-            }
-        }
-    </style>
 </head>
 <body>
     <div class="container">
         <h1>Cumulative principal with Compound interest Calculator</h1>
         <div class="input_box">
             <label for="initial-value" align="right">Initial balance, </label>
-            <p id="formula">$$\small{a}$$</p>
+            <p id="formula">$$a$$</p>
             <input type="number" id="initial-value" value="50000" placeholder="Enter initial value">
         </div>
         <div class="input_box">
             <label for="cumulative" align="right">Cumulative balance, </label>
-            <p id="formula">$$\small{d}$$</p>
+            <p id="formula">$$d$$</p>
             <input type="number" id="cumulative" value="500" placeholder="Enter cumulative value">    
         </div>
         <div class="input_box_slider">
             <label for="years" align="right">Duration, </label>
-            <p id="formula">$$\small{n}$$</p>
+            <p id="formula">$$n$$</p>
             <input type="range" id="years-slider" min="1" max="360" value="120" oninput="updateYearsFromSlider()">
             <input type="number" id="years-input" width="20px" min="1" max="360" value="120" oninput="updateYearsFromInput()">
         </div>
         <div class="input_box">
             <label for="returns" align="right">Profit Ratio (%), </label>
-            <p id="formula">$$\small{r}$$</p>
+            <p id="formula">$$r$$</p>
             <input type="number" id="returns", value="0.787" placeholder="Enter returns percentage">
         </div>
 
