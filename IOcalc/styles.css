@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+label {
+    font-size: 1rem;
+}
+h1 {
+    font-size: 1.5rem;
+}
+h2 {
+    font-size: 1.25rem;
+}
+h3 {
+    font-size: 1.125rem;
+}        
+p {
+    font-size: .75rem;
+}      
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 50px;
+    background-color: #F1F1F1;
+}
+input, button {
+    margin: 10px 0;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    text-overflow: ellipsis;
+}
+.input_box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.input_box > label {
+    flex: 3;
+}
+.input_box > p {
+    flex: 1;
+}        
+.input_box > input {
+    flex: 5;
+    margin-left: 10px;
+}
+
+.input_box_slider {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.input_box_slider > label {
+    flex: 2;
+}
+.input_box_slider > p {
+    flex: 1;
+}        
+.input_box_slider > input {
+    flex: 5;
+    margin-left: 10px;
+}
+.input_box_slider > input:last-child {
+    flex: 2;
+    margin-left: 10px;
+}
+canvas {
+    margin-top: 20px;
+    width: 100%; /* Ensures the canvas width adjusts to the container */
+    height: 400px; /* Set the desired height */
+}
+@media (max-width: 600px;) {
+    .container {
+        padding: 10px;
+    }
+    input, button {
+        padding: 8px;
+    }
+}
