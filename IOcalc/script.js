@@ -36,12 +36,16 @@ function calculateProfit() {
     const labels = [];
     const principalData = [];
     const interestData = [];
+    const totalVolumeData = [];
+
     for (let i = 0; i <= years; i++) {
         labels.push(`${i}`);
         const principal = initialValue + i*cumValue;
         const interest = initialValue*(retp**i-1) + cumValue*((1-retp**i)/(1-retp)-i);
+        const totalVolume = principal + interest
         principalData.push(principal.toFixed(2));
         interestData.push(interest.toFixed(2));
+        totalVolumeData.push(totalVolume.toFixed(2));
     }
 
     if (profitChart) {
@@ -66,6 +70,13 @@ function calculateProfit() {
                     data: interestData,
                     borderColor: 'rgba(255, 99, 132, 1)',
                     backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    fill: true
+                },
+                {
+                    label: 'Net volume',
+                    data: totalVolumeData,
+                    borderColor: 'rgba(132, 220, 99, 1)',
+                    backgroundColor: 'rgba(132, 220, 99, 0.2)',
                     fill: true
                 }
             ]
