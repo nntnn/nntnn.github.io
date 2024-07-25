@@ -6,7 +6,6 @@
     <title>Cumulative principal with Compound interest Calculator</title>
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
-
 </head>
 <body>
     <div class="container">
@@ -30,19 +29,24 @@
             <input type="number" id="years-input" width="20px" min="1" max="360" value="120" oninput="updateYearsFromInput()">
         </div>
         <div class="input_box">
-            <label for="returns">Profit Ratio (%), </label>
+            <label for="returns">Profit ratio (%), </label>
             <p id="formula">$$r$$</p>
             <input type="number" id="returns", value="0.787" placeholder="Enter returns percentage">
         </div>
         <hr>
         <h2>Loss due to Inflation</h2>
+        <div class="input_box">
+            <label for="inflation_ratio">Inflation ratio (%), </label>
+            <p id="formula">$$r_{l}$$</p>
+            <input type="number" id="inflation_ratio" value="0.247" placeholder="Enter Expected inflation ratio(%)">
+        </div>
         <hr>
         <h2>Expected expenditure</h2>
 
         <button onclick="calculateProfit()">Calculate</button>
         <h3>Formula:</h3>
         <p id="formula">$$(\textrm{Final Balance})=aR^{n}+d\frac{(1-R^{n})}{1-R}$$</p>
-        <p id="formula">$$…R=r+1$$</p>
+        <p id="formula">$$…R=(r-r_{l})+1$$</p>
         <h3 id="result"></h3>
         <canvas id="profitChart", width="100%" height="100px">></canvas>        
     </div>
