@@ -1,3 +1,5 @@
+let profitChart;
+
 function updateYearsFromInput() {
     const yearsInput = document.getElementById('years-input');
     const yearsSlider = document.getElementById('years-slider');
@@ -29,4 +31,52 @@ function calculateProfit() {
 
     const cumulativeProfit = initialValue * retp ** years + cumValue * (1 - retp ** (years - 1)) / (1 - retp);
     document.getElementById('result').innerText = `Cumulative Profit: ${cumulativeProfit.toFixed(2)}`;
+
+    // graph
+    const labels = [];
+    const data = [];
+    for (let i = 0; i <= years; i++) {
+        labels.push(`Year ${i}`);
+        const profit = initialValue * retp ** i + cumValue * (1 - retp ** i) / (1 - retp);
+        data.push(profit.toFixed(2));
+    }
+
+    if (profitChart) {
+        profitChart.destroy();
+    }
+
+    const ctx = document.getElementById('profitChart').getContext('2d');
+    profitChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Cumulative Profit',
+                data: data,
+                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                fill: true
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                x: {
+                    display: true,
+                    title: {
+                        display: true,
+                        text: 'Years'
+                    }
+                },
+                y: {
+                    display: true,
+                    title: {
+                        display: true,
+                        text: 'Cumulative Profit'
+                    }
+                }
+            }
+        }
+    });
+
 }
