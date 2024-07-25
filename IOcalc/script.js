@@ -29,16 +29,19 @@ function calculateProfit() {
         return;
     }
 
-    const cumulativeProfit = initialValue * retp ** years + cumValue * (1 - retp ** (years - 1)) / (1 - retp);
-    document.getElementById('result').innerText = `Cumulative Profit: ${cumulativeProfit.toFixed(2)}`;
+    const cumulativeProfit = initialValue * retp ** years + cumValue * (1 - retp ** (years)) / (1 - retp);
+    document.getElementById('result').innerText = `Final volume after ${years} passed : ${cumulativeProfit.toFixed(2)}`;
 
     // graph
     const labels = [];
-    const data = [];
+    const principalData = [];
+    const interestData = [];
     for (let i = 0; i <= years; i++) {
-        labels.push(`Year ${i}`);
-        const profit = initialValue * retp ** i + cumValue * (1 - retp ** i) / (1 - retp);
-        data.push(profit.toFixed(2));
+        labels.push(`${i}`);
+        const principal = initialValue + i*cumValue;
+        const interest = initialValue*(retp**i-1) + cumValue*((1-retp**i)/(1-retp)-i);
+        principalData.push(principal.toFixed(2));
+        interestData.push(interest.toFixed(2));
     }
 
     if (profitChart) {
@@ -50,13 +53,22 @@ function calculateProfit() {
         type: 'line',
         data: {
             labels: labels,
-            datasets: [{
-                label: 'Cumulative Profit',
-                data: data,
-                borderColor: 'rgba(75, 192, 192, 1)',
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                fill: true
-            }]
+            datasets: [
+                {
+                    label: 'Principal',
+                    data: principalData,
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    fill: true
+                },
+                {
+                    label: 'Interest',
+                    data: interestData,
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    fill: true
+                }
+            ]
         },
         options: {
             responsive: true,
@@ -65,18 +77,19 @@ function calculateProfit() {
                     display: true,
                     title: {
                         display: true,
-                        text: 'Years'
+                        text: 'duration'
                     }
                 },
                 y: {
                     display: true,
                     title: {
                         display: true,
-                        text: 'Cumulative Profit'
+                        text: 'Value'
                     }
                 }
             }
         }
     });
+
 
 }
