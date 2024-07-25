@@ -30,7 +30,7 @@ function calculateProfit() {
     }
 
     const cumulativeProfit = initialValue * retp ** years + cumValue * (1 - retp ** (years)) / (1 - retp);
-    document.getElementById('result').innerText = `Final volume after ${years} passed : ${cumulativeProfit.toFixed(2)}`;
+    document.getElementById('result').innerText = `Final balance after ${years} passed : ${cumulativeProfit.toFixed(2)}`;
 
     // graph
     const labels = [];
@@ -73,7 +73,7 @@ function calculateProfit() {
                     fill: true
                 },
                 {
-                    label: 'Net volume',
+                    label: 'Net balance',
                     data: totalVolumeData,
                     borderColor: 'rgba(132, 220, 99, 1)',
                     backgroundColor: 'rgba(132, 220, 99, 0.2)',
